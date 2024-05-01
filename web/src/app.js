@@ -1,4 +1,5 @@
 const doc = {
+    //Regisztráció
     regButton: document.querySelector('#regButton'),
     nNameInput: document.querySelector('#nickname'),
     lNameInput: document.querySelector('#lName'),
@@ -7,12 +8,17 @@ const doc = {
     emailInput: document.querySelector('#email'),
     email2Input: document.querySelector('#email2'),
     passInput: document.querySelector('#pass'),
-    pass2Input: document.querySelector('#pass2')    
+    pass2Input: document.querySelector('#pass2'),
+    //Belépés
+    logButton: document.querySelector('#logButton'),    
+    bnNameInput: document.querySelector('#bNickname'),    
+    bPassInput: document.querySelector('#bPass')    
 }
 
+//Regisztráció
 const state = {
     host:  'http://localhost:8000',
-    endpoint: 'datas',
+    endpoint: 'users',
     nNameInput: ' ',
     lNameInput: ' ',
     fNameInput: ' ',
@@ -20,10 +26,8 @@ const state = {
     emailInput: ' ',
     email2Input: ' ',
     passInput: ' ',
-    pass2Input:  ' '  
+    pass2Input:  ' ',  
 }
-
-
 
 doc.regButton.addEventListener('click', () => {
     setUser()
@@ -94,8 +98,6 @@ function checkEmail(email){
     }
 }
 
-
-
 function clearBoxes(){
     doc.nNameInput.value = ''
     doc.lNameInput.value = ''
@@ -105,4 +107,48 @@ function clearBoxes(){
     doc.email2Input.value = ''
     doc.passInput.value = ''
     doc.pass2Input.value  = ''
+}
+//Belépés
+logButton.addEventListener('click',()=>{
+    setLoginer()
+    login()
+})
+
+const loginer = {
+    bnName: ' ',
+    bPass: ' ',
+}
+
+function setLoginer(){
+    loginer.bnName = doc.bnNameInput.value
+    loginer.bPass = doc.bPassInput.value
+}
+
+function login() {
+    let url = state.host + '/' + state.endpoint
+    fetch(url)
+    .then(response => response.json())
+    .then(result => {
+        console.log(result)
+        checkData(result)
+    })
+}
+
+function checkData(userList) {
+    person = '';
+    userList.forEach(user => {
+        if(user.nickname == loginer.bnName && user.password == loginer.bPass)
+        {
+            person = user
+        }
+    })
+    if(person!= '')
+    {
+        alert("Sikeres bejelentkezés! Üdvözöljük "+person.lastname + " " + person.firstName+"!")
+        window.location.href = "main.html"
+    }
+    else
+    {
+        alert("Hibás jelszó vagy felhasználónév!")
+    }
 }

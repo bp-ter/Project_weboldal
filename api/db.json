@@ -1,5 +1,13 @@
 {
-  "datas": [
-
+  "users": [
+    {
+      "nickname": "asd",
+      "lastname": "asd",
+      "firstName": "asd",
+      "address": "asd",
+      "email": "asdasd@fmfg.ju",
+      "password": "asd",
+      "id": 1
+    }
   ]
 }

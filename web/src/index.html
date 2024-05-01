@@ -1,58 +1,98 @@
-
 <!DOCTYPE html>
 <html lang="hu">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regisztráció</title>
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">        
   </head>
   <body>
+    <header><h2>Projekt feladat</h2></header>
+    <nav class="navbar bg-dark border-bottom border-body justify-content-center" data-bs-theme="light">
+      <ul class="nav ">
+          <li class="nav-item">
+              <a class="nav-link" href="index.html">Regisztráció</a>
+          </li>
+          <li>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Belépés
+            </button>
+    
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Bejelentkezés</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+    
+                    <div class="input">
+                      <label for="bNickname" class="form-label">Felhasználó név:</label>
+                      <input type="text" id="bNickname" class="form-text">
+                    </div>
+              
+                    <div class="input">
+                      <label for="bPass" class="form-label">Jelszó:</label>
+                      <input type="password" id="bPass" class="form-text">
+                    </div>
+                    
+                    <div>
+                        <button class="btn btn-primary m-2 mb-50" id="logButton"> Belépés</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+    </nav>
     <div class="container">
       <h1>Regisztráció</h1>
      
       <div class="input">
-        <label for="nickname" class="form-label">Felhasználó név</label>
+        <label for="nickname" class="form-label">Felhasználó név:</label>
         <input type="text" id="nickname" class="form-control">
       </div>
 
       <div class="input">
-        <label for="lName" class="form-label">Vezeték név</label>
+        <label for="lName" class="form-label">Vezeték név:</label>
         <input type="text" id="lName" class="form-control">
       </div>
 
       <div class="input">
-        <label for="fName" class="form-label">Kereszt név</label>
+        <label for="fName" class="form-label">Kereszt név:</label>
         <input type="text" id="fName" class="form-control">
       </div>
 
       <div class="input">
-        <label for="address" class="form-label">Cím</label>
+        <label for="address" class="form-label">Cím:</label>
         <input type="text" id="address" class="form-control">
       </div>
                 
       <div class="input">
-        <label for="email" class="form-lable">E-mail cím</label>
+        <label for="email" class="form-lable">E-mail cím:</label>
         <input type="text" id="email" class="form-control">
       </div>
 
       <div class="input">
-        <label for="email2" class="form-lable">E-mail cím megerősítése</label>
+        <label for="email2" class="form-lable">E-mail cím megerősítése:</label>
         <input type="text" id="email2" class="form-control">
       </div>
                 
       <div class="input">
-        <label for="pass" class="form-lable">Jelszó</label>
+        <label for="pass" class="form-lable">Jelszó:</label>
         <input type="password" id="pass" class="form-control">
       </div>
 
       <div class="input">
-        <label for="pass2" class="form-lable">Jelszó megerősítése</label>
+        <label for="pass2" class="form-lable">Jelszó megerősítése:</label>
         <input type="password" id="pass2" class="form-control">
       </div>
 
       <div>
-        <button class="btn btn-primary mt-2" id="regButton"> Regisztráció </button>
+        <button class="btn btn-primary m-2 mb-50" id="regButton"> Regisztráció</button>
       </div>
 
     </div>
