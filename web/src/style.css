@@ -13,3 +13,20 @@ nav{
 body{
     background-color: beige;
 }
+.container{
+    display: flex ;
+}
+.content{
+    flex: 1;
+    float: left;
+    background-color:rgb(21, 117, 169);
+    text-align: center;
+    margin: 10px;
+    height: 400px;
+    color: white;
+}
+
+img{
+    height: 350px;
+    width: 400px;
+}
